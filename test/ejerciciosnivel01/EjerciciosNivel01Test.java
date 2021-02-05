@@ -37,101 +37,96 @@ public class EjerciciosNivel01Test {
     public void tearDown() {
     }
 
+    
     /**
-     * Test of numeroMaximo method, of class EjerciciosNivel01.
-     */
-    @Test
-    public void testNumeroMaximo() {
-        System.out.println("numeroMaximo");
-        int[] lista = null;
-        EjerciciosNivel01 instance = new EjerciciosNivel01();
-        int expResult = 0;
-        int result = instance.numeroMaximo(lista);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of maximos method, of class EjerciciosNivel01.
-     */
-    @Test
-    public void testMaximos() {
-        System.out.println("maximos");
-        int[] lista = null;
-        EjerciciosNivel01 instance = new EjerciciosNivel01();
-        int[] expResult = null;
-        int[] result = instance.maximos(lista);
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of esPalindromo method, of class EjerciciosNivel01.
-     */
-    @Test
-    public void testEsPalindromo() {
-        System.out.println("esPalindromo");
-        EjerciciosNivel01 instance = new EjerciciosNivel01();
-        
-        assertEquals(true, instance.esPalindromo("Acaso hubo buhos aca"));
-        assertEquals(true, instance.esPalindromo("Aca"));
-        assertEquals(false, instance.esPalindromo("feo cara culo"));
-        assertEquals(false, instance.esPalindromo("ligar es agil"));
-        assertEquals(true, instance.esPalindromo("Allí ves a sevilla"));
-        assertEquals(true, instance.esPalindromo("Adivina ya te opina, ya ni miles origina, ya ni cetro me domina, ya ni monarcas, a repaso ni mulato carreta, acaso nicotina, ya ni cita vecino, anima cocina, pedazo gallina, cedazo terso nos retoza de canilla goza, de pánico camina, ónice vaticina, ya ni tocino saca, a terracota luminosa pera, sacra nómina y ánimo de mortecina, ya ni giros elimina, ya ni poeta, ya ni vida"));
-        
-    }
-
-    /**
-     * Test of esIsograma method, of class EjerciciosNivel01.
-     */
-    @Test
-    public void testEsIsograma() {
-        System.out.println("esIsograma");
-        String palabra = "";
-        EjerciciosNivel01 instance = new EjerciciosNivel01();
-        boolean expResult = false;
-        boolean result = instance.esIsograma(palabra);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of esIsogramaJorge method, of class EjerciciosNivel01.
+     * Test of quitaAcentos method, of class EjerciciosNivel01.
+     * 
+     * Solo quita los acentos, no cambia las mayúsculas
      */
     @Test
     public void testEsIsogramaJorge() {
         System.out.println("esIsogramaJorge");
         EjerciciosNivel01 instance = new EjerciciosNivel01();
 
-        assertEquals(true, instance.esIsogramaJorge("murcielago"));
+        assertEquals(true, instance.esIsogramaJorge("murciélago"));
         assertEquals(false, instance.esIsogramaJorge("cocreta"));
+        assertEquals(false, instance.esIsogramaJorge("cámar"));
         assertEquals(false, instance.esIsogramaJorge("casa"));
+        assertEquals(true, instance.esIsogramaJorge("MURICÉLAGO"));
+        assertEquals(false, instance.esIsogramaJorge("isodrima"));
         assertEquals(false, instance.esIsogramaJorge("supercalifragilisticoespialidoso"));
-        assertEquals(false, instance.esIsogramaJorge("Cocreta"));
-        assertEquals(false, instance.esIsogramaJorge("isódroma"));
-        assertEquals(true, instance.esIsogramaJorge("pita"));
-        assertEquals(false, instance.esIsogramaJorge("pájaro"));
-        assertEquals(true, instance.esIsogramaJorge("MURCIELAGO"));
-        assertEquals(false, instance.esIsogramaJorge("COCRETA"));
-        assertEquals(true, instance.esIsogramaJorge("CETYS"));
-        assertEquals(true, instance.esIsogramaJorge("CETYS"));
-        assertEquals(true, instance.esIsogramaJorge("UFV"));
+
+    }   
+    
+  
+    /**
+     * Test of quitaAcentos method, of class EjerciciosNivel01.
+     * 
+     * Solo quita los acentos, no cambia las mayúsculas
+     */
+    @Test
+    public void testEsPalindromo() {
+        System.out.println("esPalindromo");
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+
+        assertEquals(true, instance.esPalindromo("Acaso hubo buhos aca"));
+        assertEquals(true, instance.esPalindromo("Aca"));
+        assertEquals(false, instance.esPalindromo("feo cara culo"));
+        assertEquals(false, instance.esPalindromo("ligar es agil"));
+        assertEquals(true, instance.esPalindromo("Allí ves a Sevilla"));
+        assertEquals(false, instance.esPalindromo("isodrima"));
+    }    
+
+    /**
+     * Test of quitaAcentos method, of class EjerciciosNivel01.
+     * 
+     * Solo quita los acentos, no cambia las mayúsculas
+     */
+    @Test
+    public void testQuitaAcentos() {
+        System.out.println("quitaAcentos");
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+
+        assertEquals("pajaro", instance.quitaAcentos("pájaro"));
+        assertEquals("Andale", instance.quitaAcentos("Ándale"));
+        assertEquals("Cigueña", instance.quitaAcentos("Cigüeña"));
+        assertEquals("perro", instance.quitaAcentos("perro"));
+        assertEquals("pajaro", instance.quitaAcentos("pájáró"));
+        assertEquals("pristino", instance.quitaAcentos("pristino"));
+        assertEquals("murcielago", instance.quitaAcentos("murciélago"));
+        assertEquals("atun", instance.quitaAcentos("atún"));
+        assertEquals("camion", instance.quitaAcentos("camión"));
+        
+        assertEquals("PAJARO", instance.quitaAcentos("PÁJARO"));
+        assertEquals("PRISTINO", instance.quitaAcentos("PRÍSTINO"));
+        assertEquals("MURCIELAGO", instance.quitaAcentos("MURCIÉLAGO"));
+        assertEquals("ATUN", instance.quitaAcentos("ATÚN"));
+        assertEquals("CAMION", instance.quitaAcentos("CAMIÓN"));
     }
 
     /**
-     * Test of main method, of class EjerciciosNivel01.
+     * Test of quitaAcentosV2 method, of class EjerciciosNivel01.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        EjerciciosNivel01.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testQuitaAcentosV2() {
+        System.out.println("quitaAcentosV2");
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        
+        assertEquals("pajaro", instance.quitaAcentosV2("pájaro"));
+        assertEquals("Andale", instance.quitaAcentosV2("Ándale"));
+        assertEquals("Cigueña", instance.quitaAcentosV2("Cigüeña"));
+        assertEquals("perro", instance.quitaAcentosV2("perro"));
+        assertEquals("pajaro", instance.quitaAcentosV2("pájáró"));
+        assertEquals("pristino", instance.quitaAcentosV2("pristino"));
+        assertEquals("murcielago", instance.quitaAcentosV2("murciélago"));
+        assertEquals("atun", instance.quitaAcentosV2("atún"));
+        assertEquals("camion", instance.quitaAcentosV2("camión"));
+        
+        assertEquals("PAJARO", instance.quitaAcentosV2("PÁJARO"));
+        assertEquals("PRISTINO", instance.quitaAcentosV2("PRÍSTINO"));
+        assertEquals("MURCIELAGO", instance.quitaAcentosV2("MURCIÉLAGO"));
+        assertEquals("ATUN", instance.quitaAcentosV2("ATÚN"));
+        assertEquals("CAMION", instance.quitaAcentosV2("CAMIÓN"));
     }
-    
+
 }

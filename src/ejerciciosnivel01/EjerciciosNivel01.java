@@ -5,6 +5,8 @@
  */
 package ejerciciosnivel01;
 
+import java.lang.reflect.Modifier;
+
 /**
  *
  * @author Paco2
@@ -48,7 +50,7 @@ public class EjerciciosNivel01 {
         //Acasohubobuhosaca
         String auxiliar = "";
         for (int i = 0; i < cadena.length(); i++) {
-            if (cadena.charAt(i) != ' ') {  //espacio en blanco se pone con las comillas porque es un char
+            if (cadena.charAt(i) != ' ' && cadena.charAt(i) != ',') {  //espacio en blanco se pone con las comillas porque es un char
                 auxiliar = auxiliar + cadena.charAt(i);
             }
         }
@@ -79,9 +81,7 @@ public class EjerciciosNivel01 {
             return true;  //sí que es palíndromo porque los índices se han cruzado
         }
     }
-    
-    
-    
+     
     
     public boolean esIsograma(String palabra){  
         //Este método funciona pero compara varias veces los valores ya que al inicializar j en 0
@@ -104,11 +104,11 @@ public class EjerciciosNivel01 {
         //es porque la palabra no tiene letras repetidas
         return true;
     }
-    
     public boolean esIsogramaJorge(String palabra){
         //Este método no repite comparaciones
         
         palabra = palabra.toUpperCase();
+        palabra = quitaAcentos(palabra);
         
         for(int i = 0; i < palabra.length(); i ++){         //Coge la primera letra de la palabra
             for(int j = i + 1; j < palabra.length(); j ++){ //y la va comparando. Cuando termina avanza a la siguiente letra                                               
@@ -124,21 +124,61 @@ public class EjerciciosNivel01 {
     }
     
     
+    /**
+     * @param cadena el string a limpiar
+     * @return el string sin acentos
+     */
+    public String quitaAcentos(String cadena){
+        //pájaro
+        //pajaro
+        cadena = cadena.replace('á', 'a');
+        cadena = cadena.replace('é', 'e');
+        cadena = cadena.replace('í', 'i');
+        cadena = cadena.replace('ó', 'o');
+        cadena = cadena.replace('ú', 'u');
+        cadena = cadena.replace('ü', 'u');
+        cadena = cadena.replace('Á', 'A');
+        cadena = cadena.replace('É', 'E');
+        cadena = cadena.replace('Í', 'I');
+        cadena = cadena.replace('Ó', 'O');
+        cadena = cadena.replace('Ú', 'U');
+        cadena = cadena.replace('Ü', 'U');    
+        
+        return cadena;
+    }
+    public String quitaAcentosV2(String cadena){
+        String auxiliar = "";
+        for(int i = 0; i < cadena.length(); i++){
+            if(cadena.charAt(i) == 'á') {auxiliar = auxiliar + 'a';}
+            else if(cadena.charAt(i) == 'é') {auxiliar = auxiliar + 'e';}
+            else if(cadena.charAt(i) == 'í') {auxiliar = auxiliar + 'i';}
+            else if(cadena.charAt(i) == 'ó') {auxiliar = auxiliar + 'o';}
+            else if(cadena.charAt(i) == 'ú') {auxiliar = auxiliar + 'u';}
+            else if(cadena.charAt(i) == 'ü') {auxiliar = auxiliar + 'u';}
+            else if(cadena.charAt(i) == 'ü') {auxiliar = auxiliar + 'u';}
+            
+            else if(cadena.charAt(i) == 'Á') {auxiliar = auxiliar + 'A';}
+            else if(cadena.charAt(i) == 'É') {auxiliar = auxiliar + 'E';}
+            else if(cadena.charAt(i) == 'Í') {auxiliar = auxiliar + 'I';}
+            else if(cadena.charAt(i) == 'Ó') {auxiliar = auxiliar + 'O';}
+            else if(cadena.charAt(i) == 'Ú') {auxiliar = auxiliar + 'U';}
+            else if(cadena.charAt(i) == 'Ü') {auxiliar = auxiliar + 'U';}
+            else{
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+            
+        }
+        return auxiliar;
+    }
     
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         EjerciciosNivel01 ejercicio = new EjerciciosNivel01();
 
-        //Ejercicio palíndromos
-        /*System.out.println("palíndromo: " + (ejercicio.esPalindromo("Acaso hubo buhos aca")));
-        System.out.println("palíndromo: " + (ejercicio.esPalindromo("Este no es")));*/
-        
-        //Ejercicio isograma
-        System.out.println("la palabra murciélago: " + ejercicio.esIsogramaJorge("murcielago"));
-        System.out.println("la palabra careta: " + ejercicio.esIsogramaJorge("careta"));
+        //Ejercicio quitaAcentos
+        System.out.println("quitaAcentos: " + ejercicio.quitaAcentos("raíz"));
     }
 
 }
