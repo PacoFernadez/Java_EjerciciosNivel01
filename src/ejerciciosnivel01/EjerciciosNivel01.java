@@ -5,7 +5,7 @@
  */
 package ejerciciosnivel01;
 
-import java.lang.reflect.Modifier;
+import java.util.Arrays;
 
 /**
  *
@@ -172,13 +172,77 @@ public class EjerciciosNivel01 {
     }
     
     /**
-     * @param args the command line arguments
+    * Este método recibe un String formado por varias palabras
+    * por ejemplo: "Alta Velocidad Española"
+    * y devuelve un array de Strings por ejemplo
+    * ("Alta", "Velocidad", "Española")
+    * ESTA VERSIÓN SOLO SE USARÁ EN LAS PRÁCTICAS
+    * NO EN LA VIDA REAL
+    */    
+    public String[] divideFrase(String frase){
+        frase = frase + ' ';  //Método Paco: Añade un espacio en blanco al final 
+                              //para que funcione el for con todas las palabras
+        String auxiliar = "";
+        //1ºaveriguo cuántos espacios en blano tiene la frase
+        int numeroEspaciosEnBlanco = 0; 
+        for(int i = 0; i < frase.length(); i ++){
+            if(frase.charAt(i) == ' '){
+                numeroEspaciosEnBlanco++;
+            }
+        }
+        //+1 en numeroEspaciosEnBlanco para que me coja la última palabra
+        String[] dividido = new String[numeroEspaciosEnBlanco]; 
+        int contadorPalabra = 0;
+        for(int i = 0; i < frase.length(); i ++){
+            if(frase.charAt(i) == ' '){
+                dividido[contadorPalabra] = auxiliar;
+                auxiliar = "";
+                contadorPalabra++;
+            }
+            else{
+                auxiliar = auxiliar + frase.charAt(i);
+            }
+        }
+        return dividido;
+    }
+    
+    
+    
+    /**
+     * Recibe una frase y devuelve sus acrónimo (La primera letra
+     * de cada palabra que forma la frase)
+     * @param frase
+     * @return 
      */
+    public String acronimo(String frase){
+        frase = frase.toUpperCase();
+        String[] palabras = divideFrase(frase);
+        String auxiliar = "";
+        
+        for(int i = 0; i < palabras.length; i++){
+            //palabras[i].charAt(0);
+            if(palabras[i].length() > 0){ //para evitar el problema de las palabras vacías(palabras que tienen al menos 1 char)
+                if(!(palabras[i].equals("Y") || palabras[i].equals("DE") || palabras[i].equals("LA") || palabras[i].equals("LAS") || palabras[i].equals("E"))){
+                    auxiliar = auxiliar + palabras[i].charAt(0);
+                }               
+            }
+
+                
+        }
+        return auxiliar;
+    }
+
+   
+    
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         EjerciciosNivel01 ejercicio = new EjerciciosNivel01();
 
-        //Ejercicio quitaAcentos
-        System.out.println("quitaAcentos: " + ejercicio.quitaAcentos("raíz"));
+        System.out.println((ejercicio.acronimo("Alta Velocidad Española")));
     }
 
 }

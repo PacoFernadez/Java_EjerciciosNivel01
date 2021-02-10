@@ -43,7 +43,7 @@ public class EjerciciosNivel01Test {
      * 
      * Solo quita los acentos, no cambia las mayúsculas
      */
-    @Test
+    /*@Test
     public void testEsIsogramaJorge() {
         System.out.println("esIsogramaJorge");
         EjerciciosNivel01 instance = new EjerciciosNivel01();
@@ -56,7 +56,7 @@ public class EjerciciosNivel01Test {
         assertEquals(false, instance.esIsogramaJorge("isodrima"));
         assertEquals(false, instance.esIsogramaJorge("supercalifragilisticoespialidoso"));
 
-    }   
+    }*/   
     
   
     /**
@@ -64,7 +64,7 @@ public class EjerciciosNivel01Test {
      * 
      * Solo quita los acentos, no cambia las mayúsculas
      */
-    @Test
+    /*@Test
     public void testEsPalindromo() {
         System.out.println("esPalindromo");
         EjerciciosNivel01 instance = new EjerciciosNivel01();
@@ -75,14 +75,14 @@ public class EjerciciosNivel01Test {
         assertEquals(false, instance.esPalindromo("ligar es agil"));
         assertEquals(true, instance.esPalindromo("Allí ves a Sevilla"));
         assertEquals(false, instance.esPalindromo("isodrima"));
-    }    
+    }*/    
 
     /**
      * Test of quitaAcentos method, of class EjerciciosNivel01.
      * 
      * Solo quita los acentos, no cambia las mayúsculas
      */
-    @Test
+    /*@Test
     public void testQuitaAcentos() {
         System.out.println("quitaAcentos");
         EjerciciosNivel01 instance = new EjerciciosNivel01();
@@ -102,12 +102,12 @@ public class EjerciciosNivel01Test {
         assertEquals("MURCIELAGO", instance.quitaAcentos("MURCIÉLAGO"));
         assertEquals("ATUN", instance.quitaAcentos("ATÚN"));
         assertEquals("CAMION", instance.quitaAcentos("CAMIÓN"));
-    }
+    }*/
 
     /**
      * Test of quitaAcentosV2 method, of class EjerciciosNivel01.
      */
-    @Test
+    /*@Test
     public void testQuitaAcentosV2() {
         System.out.println("quitaAcentosV2");
         EjerciciosNivel01 instance = new EjerciciosNivel01();
@@ -127,6 +127,86 @@ public class EjerciciosNivel01Test {
         assertEquals("MURCIELAGO", instance.quitaAcentosV2("MURCIÉLAGO"));
         assertEquals("ATUN", instance.quitaAcentosV2("ATÚN"));
         assertEquals("CAMION", instance.quitaAcentosV2("CAMIÓN"));
+    }*/
+
+    /**
+     * Test of numeroMaximo method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testNumeroMaximo() {
+        System.out.println("numeroMaximo");
+        int[] lista = null;
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        int expResult = 0;
+        int result = instance.numeroMaximo(lista);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of maximos method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testMaximos() {
+        System.out.println("maximos");
+        int[] lista = null;
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        int[] expResult = null;
+        int[] result = instance.maximos(lista);
+        assertArrayEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of esIsograma method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testEsIsograma() {
+        System.out.println("esIsograma");
+        String palabra = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        boolean expResult = false;
+        boolean result = instance.esIsograma(palabra);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of divideFrase method, of class EjerciciosNivel01.
+     */
+    @Test
+    public void testDivideFrase() {
+        System.out.println("divideFrase");
+        String frase = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        String[] expResult = null;
+        String[] result = instance.divideFrase(frase);
+        assertArrayEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of acronimo method, of class EjerciciosNivel01.
+     */
+    @Test
+    public void testAcronimo() {
+        System.out.println("acronimo");
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+
+        assertEquals("AVE", instance.acronimo("Alta Velocidad Española"));
+        //assertEquals("CdETyS", instance.acronimo("Centro de Estudios Tecnológcos y Sociales"));
+        assertEquals("CETS", instance.acronimo("Centro de Estudios Tecnológcos y Sociales"));
+        assertEquals("UFV", instance.acronimo("Universidad Francisco de Vitoria"));
+        assertEquals("OMS", instance.acronimo("Organización Mundial de la Salud"));
+        assertEquals("ESO", instance.acronimo("educación secundaria obligatoria"));
+        assertEquals("ITV", instance.acronimo("Inspección técnica de vehículos"));
+        assertEquals("OTAN", instance.acronimo("organización tratado atlántico norte"));
+        assertEquals("ACNUR", instance.acronimo("alto comisionado de las naciones unidas  refugiado"));
+    }
+
 
 }
