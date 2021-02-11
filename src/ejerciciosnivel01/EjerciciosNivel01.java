@@ -205,9 +205,6 @@ public class EjerciciosNivel01 {
         }
         return dividido;
     }
-    
-    
-    
     /**
      * Recibe una frase y devuelve sus acrónimo (La primera letra
      * de cada palabra que forma la frase)
@@ -233,7 +230,40 @@ public class EjerciciosNivel01 {
     }
 
    
-    
+    /**
+     * Recibe dos Strings y devuelve true si todas las letras del primero están
+     * eb el segundo (sin repetirse), por ejemplo amor y roma
+     * @param palabra1
+     * @param palabra2
+     * @return 
+     */
+    public boolean anagrama(String palabra1, String palabra2){
+        palabra1 = quitaEspaciosEnBlanco(palabra1);
+        palabra2 = quitaEspaciosEnBlanco(palabra2);
+        palabra1 = quitaAcentos(palabra1);
+        palabra2 = quitaAcentos(palabra2);
+        palabra1 = palabra1.toLowerCase();
+        palabra2 = palabra2.toLowerCase();
+        
+        if(palabra1.length() != palabra2.length()){
+            return false; //no tienen el mismo número de letras, luego no son anagramas
+        }
+        if(palabra1.length() == 0){
+            return false; //no tiene caracteres
+        }
+
+        for(int i = 0; i < palabra1.length() ; i++){
+            if(palabra2.contains("" + palabra1.charAt(i))){
+                //busoc donde está la letra y luego hago algo con ella
+                palabra2 = palabra2.replaceFirst("" + palabra1.charAt(i), "#");
+            }
+            else{
+                return false;
+            }
+        }
+        
+        return true;
+    }
     
     
     
@@ -242,7 +272,7 @@ public class EjerciciosNivel01 {
     public static void main(String[] args) {
         EjerciciosNivel01 ejercicio = new EjerciciosNivel01();
 
-        System.out.println((ejercicio.acronimo("Alta Velocidad Española")));
+        ejercicio.anagrama("roma", "amor");
     }
 
 }
