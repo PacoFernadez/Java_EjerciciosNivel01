@@ -208,5 +208,128 @@ public class EjerciciosNivel01Test {
         assertEquals("ACNUR", instance.acronimo("alto comisionado de las naciones unidas  refugiado"));
     }
 
+    /**
+     * Test of numeroMaximo method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testNumeroMaximo() {
+        System.out.println("numeroMaximo");
+        int[] lista = null;
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        int expResult = 0;
+        int result = instance.numeroMaximo(lista);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of maximos method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testMaximos() {
+        System.out.println("maximos");
+        int[] lista = null;
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        int[] expResult = null;
+        int[] result = instance.maximos(lista);
+        assertArrayEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of esPalindromo method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testEsPalindromo() {
+        System.out.println("esPalindromo");
+        String frase = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        boolean expResult = false;
+        boolean result = instance.esPalindromo(frase);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of esIsograma method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testEsIsograma() {
+        System.out.println("esIsograma");
+        String palabra = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        boolean expResult = false;
+        boolean result = instance.esIsograma(palabra);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of esIsogramaJorge method, of class EjerciciosNivel01.
+     */
+    /*@Test
+    public void testEsIsogramaJorge() {
+        System.out.println("esIsogramaJorge");
+        String palabra = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        boolean expResult = false;
+        boolean result = instance.esIsogramaJorge(palabra);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }*/
+
+    /**
+     * Test of quitaAcentos method, of class EjerciciosNivel01.
+     */
+    @Test
+    public void testQuitaAcentos() {
+        System.out.println("quitaAcentos");
+        String cadena = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        String expResult = "";
+        String result = instance.quitaAcentos(cadena);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of quitaAcentosV2 method, of class EjerciciosNivel01.
+     */
+    @Test
+    public void testQuitaAcentosV2() {
+        System.out.println("quitaAcentosV2");
+        String cadena = "";
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+        String expResult = "";
+        String result = instance.quitaAcentosV2(cadena);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+
+
+    /**
+     * Test of anagrama method, of class EjerciciosNivel01.
+     */
+    @Test
+    public void testAnagrama() {
+        System.out.println("anagrama");
+        EjerciciosNivel01 instance = new EjerciciosNivel01();
+
+        assertEquals(true, instance.anagrama("roma", "amor"));
+        assertEquals(false, instance.anagrama("", ""));
+        assertEquals(true, instance.anagrama("Claudia", "licuada"));
+        assertEquals(true, instance.anagrama("Helios", "hielos"));
+        assertEquals(true, instance.anagrama("nacionalista ", "Altisonancia"));
+        assertEquals(false, instance.anagrama("kike", "suspenso"));
+    }
+
 
 }

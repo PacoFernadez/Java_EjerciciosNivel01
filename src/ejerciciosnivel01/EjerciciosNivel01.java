@@ -266,13 +266,48 @@ public class EjerciciosNivel01 {
     }
     
     
-    
+    /**
+     * 
+     * @param diasIniciales Son los días con XX que hay que poner al inicio 
+     */
+    public void calendario(int diasIniciales){
+        diasIniciales = Math.abs(diasIniciales % 7);
+        //contador para saber que día de la semana estoy imprimiendo
+        int contador = 0;
+        //primera parte: imprimir las XX
+        for(int i = 0; i < diasIniciales; i++){
+            System.out.print("XX ");
+            contador++;
+        }
+        //segunda fase: imprimir los números del 1 al 31
+        for(int i = 1; i <= 31; i++){
+            if(i < 10){
+                System.out.print("0" + i + " ");
+            }
+            else{
+                System.out.print(i + " ");
+            }
+            contador++;
+            if(contador % 7 == 0){
+                System.out.println("");
+            }            
+        }
+        
+        //tercera parte: imprimir las XX del final 
+        int xQueFaltan = 35 - contador;
+        if(contador > 35){
+            xQueFaltan = 42 - contador;
+        }
+        for(int i = 0; i < xQueFaltan; i++){
+            System.out.print("XX ");
+        }
+    }
     
     
     public static void main(String[] args) {
         EjerciciosNivel01 ejercicio = new EjerciciosNivel01();
 
-        ejercicio.anagrama("roma", "amor");
+        ejercicio.calendario(9);
     }
 
 }
